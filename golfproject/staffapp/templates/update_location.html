@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Input Panel</title>
+  <style>
+    button {
+      width: 150px;
+      height: 150px;
+      background-color: green;
+      margin: 15px;
+      font-size: 80px;
+    }
+    button.clicked {
+      background-color: darkgreen;
+      transform: scale(0.95);
+      color: white;
+      border: 2px solid #fff;
+    }
+  </style>
+  <script src="{% static '../static/staffapp/get_location.js' %}"></script>
+</head>
+<body>
+  <form id="holeForm" method="POST" action="">
+    {% csrf_token %}
+    <input type="hidden" id="hole_id_input" name="HoleId" value="">
+    <input type="hidden" id="latitude_input" name="Latitude" value="">
+    <input type="hidden" id="longitude_input" name="Longitude" value="">
+    <h1>Admin Input Panel</h1>
+    {% if messages %}
+      <div class="message">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}åß
+      </div>
+    {% endif %}
+    <div class="golf-course">
+      <div class="row">
+        <button type="button" data-hole=1 onclick="handleButtonClick(1)">1</button>
+        <button type="button" data-hole=2 onclick="handleButtonClick(2)">2</button>
+        <button type="button" data-hole=3 onclick="handleButtonClick(3)">3</button>
+        <button type="button" data-hole=4 onclick="handleButtonClick(4)">4</button>
+        <button type="button" data-hole=5 onclick="handleButtonClick(5)">5</button>
+        <button type="button" data-hole=6 onclick="handleButtonClick(6)">6</button>
+        <button type="button" data-hole=7 onclick="handleButtonClick(7)">7</button>
+        <button type="button" data-hole=8 onclick="handleButtonClick(8)">8</button>
+        <button type="button" data-hole=9 onclick="handleButtonClick(9)">9</button>
+        <button type="button" data-hole=10 onclick="handleButtonClick(10)">10</button>
+        <button type="button" data-hole=11 onclick="handleButtonClick(11)">11</button>
+        <button type="button" data-hole=12 onclick="handleButtonClick(12)">12</button>
+        <button type="button" data-hole=13 onclick="handleButtonClick(13)">13</button>
+        <button type="button" data-hole=14 onclick="handleButtonClick(14)">14</button>
+        <button type="button" data-hole=15 onclick="handleButtonClick(15)">15</button>
+        <button type="button" data-hole=16 onclick="handleButtonClick(16)">16</button>
+        <button type="button" data-hole=17 onclick="handleButtonClick(17)">17</button>
+        <button type="button" data-hole=18 onclick="handleButtonClick(18)">18</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
